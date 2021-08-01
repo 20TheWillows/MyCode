@@ -15,7 +15,7 @@ class Test_General_Functions(unittest.TestCase):
         self.assertEqual(General_Functions.anomalies_overlap_circumferentially(100, 140, 135, 200),True)
 
     def test_anomalies_overlap_circumferentially_case3(self):
-        self.assertEqual(General_Functions.anomalies_overlap_circumferentially(30, 330, 5, 25),False)
+        self.assertEqual(General_Functions.anomalies_overlap_circumferentially(30, 330, 10, 25),False)
 
     def test_anomalies_overlap_circumferentially_case4(self):
         self.assertEqual(General_Functions.anomalies_overlap_circumferentially(350, 20, 19, 40),True)
