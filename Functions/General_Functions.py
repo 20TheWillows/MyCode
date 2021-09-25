@@ -1,3 +1,7 @@
+import math
+import numpy as np
+import pandas as pd
+
 def anomalies_overlap_axially(box1_log_distance, box1_length, box2_log_distance, box2_length):
     '''
     Returns a boolean to determine if two anomalies overlap axially.
@@ -23,6 +27,7 @@ def anomalies_overlap_axially(box1_log_distance, box1_length, box2_log_distance,
         return False
     else:
         return True
+
 
 def anomalies_overlap_circumferentially(box1_start_orientation, 
                                         box1_end_orientation, 
@@ -65,6 +70,32 @@ def anomalies_overlap_circumferentially(box1_start_orientation,
        overlap = box2_start_orientation <= box1_end_orientation or box2_end_orientation >= box1_start_orientation
     
     return overlap
+
+# Find closest distance (in mm) from a box extent to a target orientation
+# Inputs are assumed to be:
+# target orientation : degrees 0-360
+# box_start_orientation : degree 0-360
+# box_width : mm
+# nom_OD : mm
+def find_smallest_distance_to_orientation(target_orientation, 
+                                          box_start_orientation,
+                                          box_width,
+                                          nom_OD):
+    # Return value
+    distance = None
+    # Error check
+    target_orientation = target_orientation % 360
+    
+    # Need circumference
+    circumference = math.pi * nom_OD
+
+
+
+
+
+    return distance
+
+
 
 def get_roman_year(year):
     '''
